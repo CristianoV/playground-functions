@@ -27,17 +27,21 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount(array) 
-{
-//   let acertos=0;
-//   for (let index = 0; index < array.length; index++) {
-//       for (let index1 = 0; index1 < array.length; index1++) {
-//           if (array[index] === array[index1]) {
-//               acertos += 1;
-//           }
-//       }
-//   }
-//   return acertos - (array.length -1);
+function highestCount(array) {
+  let test = array[0];
+  let n = 0;
+
+  for (let index = 0; index < array.length; index+= 1) {
+    if (array[index] > test) {
+      test = array[index]
+    }
+  }
+  for (let index = 0; index < array.length; index+= 1) {
+    if (test === array[index]) {
+      n +=1;
+    }
+  }
+  return n;
 }
 
 // Desafio 7
@@ -88,7 +92,7 @@ function fizzBuzz(array) {
 }
 // Desafio 9
 function encode(string) {
-  let cripto=[]
+  let cripto=[];
   for (let index = 0; index < string.length; index++) {
     if (string[index]==="a") {
       cripto.push("1")
@@ -109,7 +113,7 @@ function encode(string) {
       cripto.push(string[index])
     }
   }
-  return cripto;
+  return cripto.toString();
 }
 function decode(encode) {
   let cripto;
