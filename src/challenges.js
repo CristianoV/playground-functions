@@ -28,20 +28,20 @@ function footballPoints(wins, ties) {
 
 // Desafio 6
 function highestCount(array) {
-  let test = array[0];
-  let n = 0;
+  let posicao = array[0];
+  let quantidade = 0;
 
   for (let index = 0; index < array.length; index+= 1) {
-    if (array[index] > test) {
-      test = array[index]
+    if (array[index] > posicao) {
+      posicao = array[index]
     }
   }
   for (let index = 0; index < array.length; index+= 1) {
-    if (test === array[index]) {
-      n +=1;
+    if (posicao === array[index]) {
+      quantidade +=1;
     }
   }
-  return n;
+  return quantidade;
 }
 
 // Desafio 7
@@ -93,7 +93,7 @@ function fizzBuzz(array) {
 // Desafio 9
 function encode(string) {
   let cripto=[];
-  for (let index = 0; index < string.length; index++) {
+  for (let index = 0; index < string.length; index+= 1) {
     if (string[index]==="a") {
       cripto.push("1")
     }
@@ -112,12 +112,20 @@ function encode(string) {
     else{
       cripto.push(string[index])
     }
+
   }
-  return cripto.toString();
+  let realName="";
+  for (let index = 0; index < cripto.length; index+= 1) {
+    realName= realName + cripto[index]
+    
+  }
+  return realName;
 }
 function decode(encode) {
-  let cripto;
-  for (let index = 0; index < encode.length; index++) {
+  let string = encode;
+  let cripto=[];
+
+  for (let index = 0; index < string.length; index+= 1) {
     if (string[index]==="1") {
       cripto.push("a")
     }
@@ -137,7 +145,11 @@ function decode(encode) {
       cripto.push(string[index])
     }
   }
-  return cripto;
+  let realName="";
+  for (let index = 0; index < cripto.length; index+= 1) {
+    realName= realName + cripto[index]
+  }
+   return realName
 }
 
 // Desafio 10
